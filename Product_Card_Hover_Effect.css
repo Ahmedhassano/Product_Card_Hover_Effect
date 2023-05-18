@@ -1,0 +1,102 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   background-color: black;
+}
+.product_card{
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: 0.5s 0.2s;
+    box-shadow:0px 0px 20px 5px rgba(255, 0, 0, 0.537),
+    0px 0px 40px 5px rgba(255, 0, 0, 0.737),
+    0px 0px 80px 5px rgba(255, 0, 0, 0.736)
+    ;border: 5px solid red;
+    background-color: black;
+      
+}
+.product_card::before{
+    content: "cocacola";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   text-transform: uppercase;
+   font-size: 3.3rem;
+   color: white;
+   transition: 0.4s 0.5s;
+   font-family: 'Cedarville Cursive', cursive;
+   font-family: 'Dancing Script', cursive;
+   font-family: 'DotGothic16', sans-serif;
+   font-family: 'Macondo', cursive;
+   font-family: 'Rubik Moonrocks', cursive;
+   font-family: 'Sacramento', cursive;
+}
+.product_card:hover:before{
+       transform: scale(0);
+       transition: 0.4s 0s;
+}
+.product_card:hover{
+    width: 600px;
+    height: 400px;
+    border-radius: 20px;
+    background-color: red;
+}
+.card_context{
+    color: white;
+     position: absolute;
+     width: 300px;
+     display: flex;
+     gap: 10px;
+     flex-direction: column;
+     opacity: 0;
+     transform: translateX(0px);
+     transition: 0.4s ;
+}
+.card_context button{
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+   
+}
+.card_img{
+   width: 450px;
+   height: 400px;
+  transition: 0.5s ;
+  pointer-events: none;
+}
+.card_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: rotate(750deg) scale(0);
+    transition: 0.4s ;  
+}
+.product_card:hover .card_context{
+    transform: translateX(-40%);
+    opacity: 1;
+    transition: 0.4s 0.4s;
+}
+.product_card:hover .card_img {
+    transform: translate(30%,-20%);
+    transition: 0.4s 0.4s;
+}
+.product_card:hover .card_img img{
+    transform: rotate(15deg) scale(1) ;
+    transition: 0.4s 0.4s;
+}
